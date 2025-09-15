@@ -11,7 +11,7 @@ body {
   color: #111;
   line-height: 1.6;
   color: #dbdbdb;
-  background-image: url('Images/bckgrnd.png');
+  background-image: url('bckgrnd.png');
   background-size: cover; 
   background-position: center;  
   background-repeat: no-repeat; 
@@ -551,3 +551,4 @@ body {
 .cart-toggle:hover {
   background: rgba(255, 255, 255, 0.2);
 }
+
