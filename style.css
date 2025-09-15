@@ -1,0 +1,553 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  color: #111;
+  line-height: 1.6;
+  color: #dbdbdb;
+  background-image: url('Images/bckgrnd.png');
+  background-size: cover; 
+  background-position: center;  
+  background-repeat: no-repeat; 
+}
+/* 
+  background-image: url('Images/your-background.jpg'); path to your image
+  background-size: cover;  makes image cover the entire page 
+  background-position: center;  centers the image
+  background-repeat: no-repeat; prevents tiling
+*/
+h1, h2, h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: uppercase; /* adds punch */
+  
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 10px; /* small space from the top of the viewport */
+  left: 50%;
+  transform: translateX(-50%); /* keep it centered */
+  width: calc(100% - 40px); /* slightly smaller than full width for padding */
+  max-width: 1200px; /* optional: prevent it from being too wide on large screens */
+  
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px) saturate(150%);
+  -webkit-backdrop-filter: blur(12px) saturate(150%);
+  border-radius: 16px; /* rounded corners all around */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  
+  padding: 2px 6px;
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3); /* floating shadow */
+    transition: all 0.3s ease; /* smooth animation */
+}
+
+/* Hover effect */
+.navbar:hover {
+  background: rgba(255, 255, 255, 0.2);  /* slightly brighter */
+  box-shadow: 0 12px 30px rgba(0,0,0,0.4); /* stronger shadow for "lifted" effect */
+  transform: translateX(-50%) translateY(-2px); /* subtle lift */
+}
+
+.navbar ul {
+  display: flex;
+  align-items: center;       /* vertically center links */
+  justify-content: center;   /* center nav links */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;               /* fill navbar space */
+}
+
+.navbar ul li {
+  margin: 0 20px;
+  background: none;          /* remove any accidental background */
+}
+
+.navbar ul li.logo {
+  margin-right: auto;        /* push nav links to the right */
+  display: flex;
+  align-items: center;       /* vertically center logo */
+}
+
+.nav-logo {
+  height: 40px;              /* logo size */
+  display: block;
+  cursor: pointer;           /* indicates clickable */
+}
+
+.navbar ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.navbar ul li a:hover {
+  color: #ff4b2b;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+/* Push hero down so it doesn't hide behind navbar */
+body {
+  padding-top: 70px;
+}
+
+/* Contact Form */
+.contact form {
+  max-width: 400px;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contact input, .contact textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.contact button {
+  background: #ff4b2b;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.contact button:hover {
+  background: #ff1c00;
+}
+
+/* Hero Section */
+.hero {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-banner {
+  width: 100%;
+  height: auto; /* image height determines hero height */
+  display: block;
+}
+
+.hero-btn {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ff4b2b;
+  color: #fff;
+  padding: 15px 30px;
+  text-decoration: none;
+  border-radius: 25px;
+  font-size: 1.2rem;
+  transition: background 0.3s;
+}
+
+.hero-btn:hover {
+  background: #ff1c00;
+}
+
+/* Shop Now button */
+.btn {
+  background: #ff4b2b;
+  color: #ffffff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 25px;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #ff1c00;
+}
+
+/* Sections */
+.section {
+  padding: 30px 20px;
+  text-align: center;
+}
+
+
+#about {
+  margin-top: 30px; /* increase this value for more gap */
+}
+
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+/* Shop Grid */
+.products {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* always 3 columns */
+  gap: 50px;
+  margin-top: 20px;
+}
+
+.product {
+  background: rgba(255, 255, 255, 0.15); /* transparent white */
+  backdrop-filter: blur(12px) saturate(150%);
+  -webkit-backdrop-filter: blur(12px) saturate(150%); /* Safari support */
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+  color: #dbdbdb;
+}
+
+.product img {
+  max-width: 100%;
+  border-radius: 12px;
+}
+
+.product:hover {
+  transform: translateY(-5px) scale(1.06);
+  box-shadow: 0 0px 25px rgba(255, 252, 237, 0.2);
+}
+
+#shop > h2 {
+  font-size: 2.5rem;       /* increase size */
+  font-weight: bold;        /* make it stand out */
+  color: #dbdbdb;           /* brand color */
+  margin-bottom: 0px;      /* space below the heading */
+  text-transform: uppercase; /* optional, all caps */
+  letter-spacing: 2px;      /* optional, spacing between letters */
+}
+
+.product h3 {
+  margin: 10px 0;
+}
+
+.products-section > h3 {
+  font-size: 1.8rem;       /* adjust size as needed */
+  font-weight: bold;     /* optional, makes it stand out */
+  margin-bottom: 20px;   /* space between heading and products */
+  color: #ff4b2b;        /* optional, to match brand */
+  text-transform: uppercase; /* optional, makes all caps */
+}
+
+.product button {
+  background: #333;
+  color: #fff;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.product button:hover {
+  background: #555;
+}
+
+/* Footer */
+.footer {
+  background: #696969;
+  color: #ccc;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Modal */
+.modal {
+  display: none; /* hidden by default */
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background: rgba(0,0,0,0.8);
+}
+
+.modal-content {
+  background: rgba(255, 255, 255, 0.15); /* transparent white */
+  backdrop-filter: blur(12px) saturate(150%); 
+  -webkit-backdrop-filter: blur(12px) saturate(150%); /* Safari support */
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+
+  margin: 10% auto;
+  padding: 20px;
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+  position: relative;
+
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+  color: #fff; /* ensures text stays visible on dark background */
+}
+
+
+.modal-content img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.modal-content h3 {
+  margin-bottom: 10px;
+}
+
+.modal-content p {
+  margin-bottom: 15px;
+}
+
+.modal-content button {
+  background: #ff4b2b;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.modal-content button:hover {
+  background: #ff1c00;
+}
+
+/* Close button */
+.close {
+  position: absolute;
+  top: 2px;           /* adjust vertical position */
+  right: 16px;         /* adjust horizontal position */
+  color: #fff;         /* visible over dark modal */
+  font-size: 32px;     /* size of the × */
+  font-weight: bold;
+  cursor: pointer;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.7); /* drop shadow effect */
+  transition: color 0.3s, transform 0.2s;
+}
+
+.close:hover {
+  color: #ff4b2b;      /* hover color */
+  transform: scale(1.1); /* subtle pop on hover */
+}
+
+
+/* Add spacing between each collection */
+.products-section {
+  margin-bottom: 60px; /* adjust the value as needed */
+}
+
+/* Custom dropdown container */
+.custom-dropdown {
+  position: relative;
+  width: 60%;
+  margin: 10px auto 20px auto;
+  cursor: pointer;
+  user-select: none;
+  font-size: 16px;
+}
+
+/* Selected value box */
+.custom-dropdown .selected {
+  padding: 10px 15px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.3);
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(12px) saturate(150%);
+  -webkit-backdrop-filter: blur(12px) saturate(150%);
+  color: #fff;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.custom-dropdown .selected:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+/* Options list */
+.custom-dropdown .options {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  right: 0;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(12px) saturate(150%);
+  -webkit-backdrop-filter: blur(12px) saturate(150%);
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.3);
+  max-height: 200px;
+  overflow-y: auto;
+  display: none;
+  z-index: 1000;
+}
+
+/* Individual options */
+.custom-dropdown .option {
+  padding: 10px;
+  text-align: center;
+  color: #fff;
+  transition: background 0.3s;
+}
+
+.custom-dropdown .option:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+/* Collapse effect */
+.products.collapsed .product:nth-child(n+7) {
+  display: none; /* hide everything after the 3rd product */
+}
+
+.show-more-btn {
+  margin-top: 20px;
+  padding: 10px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #ff4b2b;
+  cursor: pointer;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.show-more-btn:hover {
+  color: #ff1c00;
+}
+
+.show-more-btn.rotated {
+  transform: rotate(180deg);
+}
+
+/* Cart Sidebar */
+.cart-sidebar {
+  position: fixed;
+  top: 0;
+  right: -400px; /* hidden off-screen */
+  width: 350px;
+  height: 100%;
+  background: rgba(30,30,30,0.95);
+  color: #fff;
+  box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+  transition: right 0.3s ease;
+  z-index: 3000;
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-sidebar.active {
+  right: 0; /* slide in */
+}
+
+.cart-header {
+  padding: 15px;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart-items {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.cart-item img {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  margin-right: 10px;
+}
+
+.cart-item-details {
+  flex: 1;
+}
+
+.cart-item-details h4 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.cart-item-details p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.cart-item button {
+  background: none;
+  border: none;
+  color: #ff4b2b;
+  cursor: pointer;
+}
+
+.cart-footer {
+  padding: 15px;
+  border-top: 1px solid rgba(255,255,255,0.2);
+}
+
+.cart-footer button {
+  width: 100%;
+  background: #ff4b2b;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.cart-footer button:hover {
+  background: #ff1c00;
+}
+
+.cart-toggle {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+  padding: 6px 5px;
+  cursor: pointer;
+  z-index: 1001;
+
+  /* Glassmorphism styles */
+  background: rgba(255, 255, 255, 0.1); /* transparent white */
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 12px 0 0 12px;
+  backdrop-filter: blur(8px) saturate(180%);
+  -webkit-backdrop-filter: blur(8px) saturate(180%);
+
+  /* Smooth transition */
+  transition: right 0.3s ease, background 0.3s ease;
+  color: #fff;
+}
+
+.cart-toggle:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
